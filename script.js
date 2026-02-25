@@ -34,7 +34,11 @@ nuevaPregunta();
 
 // -------- JUEGO DE MEMORIA --------
 const tablero = document.getElementById("tablero");
-const emojis = ["🐶", "🐱", "🐸", "🦊"];
+const emojis = [
+  "🐶", "🐱", "🐭", "🐹",
+  "🐰", "🦊", "🐻", "🐼",
+  "🐨", "🐯", "🦁", "🐸"
+];
 let cartas = [...emojis, ...emojis];
 let primeraCarta = null;
 let bloqueo = false;
@@ -56,8 +60,20 @@ cartas.forEach((emoji) => {
       primeraCarta = carta;
     } else {
       if (primeraCarta.dataset.valor === carta.dataset.valor) {
-        primeraCarta = null;
-      } else {
+  primeraCarta = null;
+
+  const cartasRestantes = document.querySelectorAll(".carta");
+  const todasDescubiertas = [...cartasRestantes].every(
+    c => c.textContent !== "?"
+  );
+
+  if (todasDescubiertas) {
+    setTimeout(() => {
+      alert("🎉 ¡Ganaste!");
+      location.reload();
+    }, 500);
+  }
+} else {
         bloqueo = true;
         setTimeout(() => {
           carta.textContent = "?";
