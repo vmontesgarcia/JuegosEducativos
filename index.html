@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Juegos Educativos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>🎮 Mini Juegos Educativos</h1>
+
+  <div class="menu">
+    <button onclick="mostrarJuego('sumas')">Juego de Sumas 🧮</button>
+    <button onclick="mostrarJuego('memoria')">Juego de Memoria 🧠</button>
+  </div>
+
+  <!-- JUEGO DE SUMAS -->
+  <div id="sumas" class="juego">
+    <h2>¿Cuánto es?</h2>
+    <p id="pregunta"></p>
+    <input type="number" id="respuesta">
+    <button onclick="verificarRespuesta()">Responder</button>
+    <p id="resultado"></p>
+    <p>Puntos: <span id="puntos">0</span></p>
+  </div>
+
+  <!-- JUEGO DE MEMORIA -->
+  <div id="memoria" class="juego oculto">
+    <h2>Encuentra las parejas</h2>
+    <div id="tablero" class="tablero"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
