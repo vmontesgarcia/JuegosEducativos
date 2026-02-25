@@ -37,7 +37,7 @@ button:hover {
 
 .tablero {
   display: grid;
-  grid-template-columns: repeat(4, 80px);
+  grid-template-columns: repeat(6, 80px);
   gap: 10px;
   justify-content: center;
   margin-top: 20px;
